@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
-describe('Tests About page', () => {
+describe('Tests if About page', () => {
   it('has an h2 tag with the text About Pokédex', () => {
     const { history } = renderWithRouter(<App />);
     userEvent.click(screen.getByText(/About/i));

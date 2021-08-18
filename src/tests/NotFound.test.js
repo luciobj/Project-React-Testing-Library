@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
 
-describe('Tests About page', () => {
+describe('Tests if Not Found page', () => {
   it('redirects to NotFound if unknown path is typed', () => {
     const { history } = renderWithRouter(<App />);
     history.push('/pagina/que-nao-existe/');
