@@ -30,7 +30,8 @@ describe('Tests if the main page', () => {
     userEvent.click(screen.getByText(/Home/));
     const { pathname } = history.location;
     expect(pathname).toBe('/');
-    userEvent.click(screen.getByTestId(''));
+    const typeButtons = screen.getAllByTestId(selectTypeButtons);
+    userEvent.click(typeButtons[0]);
     const currentPokemonName = screen.getByTestId(pokeName);
     const name = 'Pikachu';
     expect(currentPokemonName.innerHTML).toBe(name);
@@ -42,7 +43,8 @@ describe('Tests if the main page', () => {
     userEvent.click(screen.getByText(/Home/));
     const { pathname } = history.location;
     expect(pathname).toBe('/');
-    userEvent.click(screen.getByTestId(''));
+    const typeButtons = screen.getAllByTestId(selectTypeButtons);
+    userEvent.click(typeButtons[0]);
     userEvent.click(screen.getByTestId(nextPoke));
     const allPokemonName = screen.getAllByTestId(pokeName);
     expect(allPokemonName.length).toBe(1);
@@ -80,8 +82,9 @@ describe('Tests if the main page', () => {
     userEvent.click(screen.getByText(/Home/));
     const { pathname } = history.location;
     expect(pathname).toBe('/');
-    const allButton = screen.getByTestId('');
-    expect(allButton).toBeInTheDocument();
+    const typeButtons = screen.getAllByTestId(selectTypeButtons);
+    userEvent.click(typeButtons[0]);
+    expect(typeButtons[0]).toBeInTheDocument();
     const currentPokemonName = screen.getByTestId(pokeName);
     const name = 'Pikachu';
     expect(currentPokemonName.innerHTML).toBe(name);
@@ -93,8 +96,8 @@ describe('Tests if the main page', () => {
     userEvent.click(screen.getByText(/Home/));
     const { pathname } = history.location;
     expect(pathname).toBe('/');
-    userEvent.click(screen.getByTestId(''));
     const typeButtons = screen.getAllByTestId(selectTypeButtons);
+    userEvent.click(typeButtons[0]);
     userEvent.click(typeButtons[2]);
     userEvent.click(screen.getByTestId(''));
     const currentPokemonName = screen.getByTestId(pokeName);
