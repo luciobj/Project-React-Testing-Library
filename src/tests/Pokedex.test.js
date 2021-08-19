@@ -30,8 +30,8 @@ describe('Tests if the main page', () => {
     userEvent.click(screen.getByText(/Home/));
     const { pathname } = history.location;
     expect(pathname).toBe('/');
-    const typeButtons = screen.getAllByTestId(selectTypeButtons);
-    userEvent.click(typeButtons[0]);
+    const allButton = screen.getByText(/All/i);
+    userEvent.click(allButton);
     const currentPokemonName = screen.getByTestId(pokeName);
     const name = 'Pikachu';
     expect(currentPokemonName.innerHTML).toBe(name);
@@ -43,8 +43,8 @@ describe('Tests if the main page', () => {
     userEvent.click(screen.getByText(/Home/));
     const { pathname } = history.location;
     expect(pathname).toBe('/');
-    const typeButtons = screen.getAllByTestId(selectTypeButtons);
-    userEvent.click(typeButtons[0]);
+    const allButton = screen.getByText(/All/i);
+    userEvent.click(allButton);
     userEvent.click(screen.getByTestId(nextPoke));
     const allPokemonName = screen.getAllByTestId(pokeName);
     expect(allPokemonName.length).toBe(1);
@@ -82,9 +82,8 @@ describe('Tests if the main page', () => {
     userEvent.click(screen.getByText(/Home/));
     const { pathname } = history.location;
     expect(pathname).toBe('/');
-    const typeButtons = screen.getAllByTestId(selectTypeButtons);
-    userEvent.click(typeButtons[0]);
-    expect(typeButtons[0]).toBeInTheDocument();
+    const allButton = screen.getByText(/All/i);
+    userEvent.click(allButton);
     const currentPokemonName = screen.getByTestId(pokeName);
     const name = 'Pikachu';
     expect(currentPokemonName.innerHTML).toBe(name);
@@ -97,9 +96,11 @@ describe('Tests if the main page', () => {
     const { pathname } = history.location;
     expect(pathname).toBe('/');
     const typeButtons = screen.getAllByTestId(selectTypeButtons);
-    userEvent.click(typeButtons[0]);
+    const allButton = screen.getByText(/All/i);
+    userEvent.click(allButton);
+    expect(typeButtons[2].innerHTML).not.toBe('Electric');
     userEvent.click(typeButtons[2]);
-    userEvent.click(typeButtons[0]);
+    userEvent.click(allButton);
     const currentPokemonName = screen.getByTestId(pokeName);
     const name = 'Pikachu';
     expect(currentPokemonName.innerHTML).toBe(name);
