@@ -99,7 +99,7 @@ describe('Tests if the main page', () => {
     const typeButtons = screen.getAllByTestId(selectTypeButtons);
     userEvent.click(typeButtons[0]);
     userEvent.click(typeButtons[2]);
-    userEvent.click(screen.getByTestId(''));
+    userEvent.click(typeButtons[0]);
     const currentPokemonName = screen.getByTestId(pokeName);
     const name = 'Pikachu';
     expect(currentPokemonName.innerHTML).toBe(name);
