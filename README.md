@@ -18,7 +18,7 @@ Copy the ssh from the project `git@github.com:luciobj/Project-React-Testing-Libr
 * Open a terminal int your machine and type the following commands in order:
 
   * `git clone git@github.com:luciobj/Project-React-Testing-Library.git`
-  * `cd Project-Recipes-App`
+  * `cd Project-React-Testing-Library`
   * `npm install`
   * `npm start`
 
