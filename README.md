@@ -1,10 +1,10 @@
-# Welcome to the Recipe APP
+# Welcome to the React Testing Library
 
 ## Context
 
 This project was made as a work assignment in during the Trybe web developer course.
 
-The goal was to create the required tests for the application using the React Testing Library. The application was made by the Trybe team, and my contribuition is solely on the tests.
+The goal was to create the required tests for the application using the React Testing Library. The application is just a small list of Pokemons, with a couple of filters and types. It was developed during the course exercises, but this version was made by the Trybe team.
 
 ---
 
